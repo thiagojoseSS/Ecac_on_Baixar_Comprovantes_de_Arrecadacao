@@ -40,7 +40,8 @@
     },
     "processOptions": {
       "ignoredFiles": [
-        "testes.xaml"
+        "testes.xaml",
+        "Teste2.xaml"
       ]
     },
     "fileInfoCollection": [],

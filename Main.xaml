@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="896,1670" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ucat="clr-namespace:UiPath.Core.Activities.TextModifications;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="896,2977" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ucat="clr-namespace:UiPath.Core.Activities.TextModifications;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
       <x:String>System.Activities</x:String>
@@ -103,34 +103,31 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="596,1605" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="903,2912" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="estaNaPaginaCerta" />
       <Variable x:TypeArguments="ui:Browser" Name="navegador" />
-      <Variable x:TypeArguments="x:String" Name="pastaRaiz">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\LIFECTI\BOT_DCTF</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\LIFECTI\BOT_DCTF" Name="pastaRaiz" />
       <Variable x:TypeArguments="s:String[]" Name="dataHojeArray" />
       <Variable x:TypeArguments="x:String" Name="cnpj" />
       <Variable x:TypeArguments="s:String[]" Name="caminhoRaizArray" />
       <Variable x:TypeArguments="x:String" Name="caminhoParaSalvarStr" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificarPagina.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="554,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VerificarPagina.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificarPagina.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="861,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VerificarPagina.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="ui:Browser" x:Key="navegador">[navegador]</InOutArgument>
         <InOutArgument x:TypeArguments="x:Boolean" x:Key="estaNaPaginaCerta">[estaNaPaginaCerta]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[estaNaPaginaCerta]" sap:VirtualizedContainerService.HintSize="554,1239" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[estaNaPaginaCerta]" sap:VirtualizedContainerService.HintSize="861,2546" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="938,2344" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="783,2197" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="cnpjRegex" />
           </Sequence.Variables>
@@ -139,7 +136,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[navegador]" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="896,304" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+          <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[navegador]" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="741,304" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -167,8 +164,8 @@
               </ActivityAction>
             </ui:BrowserScope.Body>
           </ui:BrowserScope>
-          <ui:Matches BuilderPattern="(\d{2}).(\d{3}).(\d{3})/(\d{4})-(\d{2})" sap:VirtualizedContainerService.HintSize="896,60" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[cnpj]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;2&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;.&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:2,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;3&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:3,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;.&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:4,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;3&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:5,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\/&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:6,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;4&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:7,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;-&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:8,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;2&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(\d{2}).(\d{3}).(\d{3})/(\d{4})-(\d{2})" RegexOption="IgnoreCase, Compiled" Result="[cnpjRegex]" />
-          <ui:ModifyText DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="896,52" sap2010:WorkflowViewState.IdRef="ModifyText_3" OutputText="[cnpj]" SourceText="[cnpjRegex.ToArray(0).ToString]">
+          <ui:Matches BuilderPattern="(\d{2}).(\d{3}).(\d{3})/(\d{4})-(\d{2})" sap:VirtualizedContainerService.HintSize="741,60" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[cnpj]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;2&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;.&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:2,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;3&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:3,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;.&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:4,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;3&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:5,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\/&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:6,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;4&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:7,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;-&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:8,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Dígito&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;2&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(\d{2}).(\d{3}).(\d{3})/(\d{4})-(\d{2})" RegexOption="IgnoreCase, Compiled" Result="[cnpjRegex]" />
+          <ui:ModifyText DisplayName="Modify Text" sap:VirtualizedContainerService.HintSize="741,52" sap2010:WorkflowViewState.IdRef="ModifyText_3" OutputText="[cnpj]" SourceText="[cnpjRegex.ToArray(0).ToString]">
             <ui:ModifyText.Body>
               <ActivityAction>
                 <Sequence DisplayName="Fazer" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -208,40 +205,23 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ModifyText>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="getDataecriarPastas.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="896,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="getDataecriarPastas.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="getDataecriarPastas.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="741,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="getDataecriarPastas.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <OutArgument x:TypeArguments="s:String[]" x:Key="dataHojeArray">
-                <VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="dataHojeArray" />
-              </OutArgument>
+              <OutArgument x:TypeArguments="s:String[]" x:Key="dataHojeArray">[dataHojeArray]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OrganizaSelecionarPasta.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="896,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="OrganizaSelecionarPasta.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OrganizaSelecionarPasta.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="741,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="OrganizaSelecionarPasta.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="pastaRaiz">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pastaRaiz" />
-              </InArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="caminhoRaizArray">
-                <VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="caminhoRaizArray" />
-              </InOutArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="cnpj">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="cnpj" />
-              </InArgument>
-              <InArgument x:TypeArguments="s:String[]" x:Key="dataHojeArray">
-                <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="dataHojeArray" />
-              </InArgument>
-              <InOutArgument x:TypeArguments="x:String" x:Key="caminhoParaSalvarStr">
-                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="caminhoParaSalvarStr" />
-              </InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="pastaRaiz">[pastaRaiz]</InArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="caminhoRaizArray">[caminhoRaizArray]</InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="cnpj">[cnpj]</InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="dataHojeArray">[dataHojeArray]</InArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="caminhoParaSalvarStr">[caminhoParaSalvarStr]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Sequence DisplayName="BaixarDARFs" sap:VirtualizedContainerService.HintSize="896,1414" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="BaixarDARFs" sap:VirtualizedContainerService.HintSize="741,1267" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="linhaDaTabela">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">2</Literal>
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+              <Variable x:TypeArguments="x:String" Default="2" Name="linhaDaTabela" />
               <Variable x:TypeArguments="x:Int32" Name="tamTabela" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
@@ -249,7 +229,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="834,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign sap:VirtualizedContainerService.HintSize="679,82" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[linhaDaTabela]</OutArgument>
               </Assign.To>
@@ -257,19 +237,19 @@
                 <InArgument x:TypeArguments="x:String">2</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[navegador]" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="834,1181" sap2010:WorkflowViewState.IdRef="BrowserScope_2">
+            <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[navegador]" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="679,1034" sap2010:WorkflowViewState.IdRef="BrowserScope_2">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="800,1072" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="645,925" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Extração de Dados" sap:VirtualizedContainerService.HintSize="758,81" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <Sequence DisplayName="Extração de Dados" sap:VirtualizedContainerService.HintSize="603,81" sap2010:WorkflowViewState.IdRef="Sequence_20">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -310,12 +290,12 @@
                         </Assign.Value>
                       </Assign>
                     </Sequence>
-                    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="758,863" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+                    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="603,716" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
                       <ui:IfElseIf.ConditionBlocks>
                         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                           <ui:IfElseIfBlock BlockType="If" Condition="[tamTabela &gt; 0]">
                             <ui:IfElseIfBlock.Then>
-                              <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="552,667" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="552,520" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Int32" Name="idLinha" />
                                 </Sequence.Variables>
@@ -324,13 +304,13 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[idLinha]" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,579" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[idLinha]" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,432" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                                   <ui:ForEachRow.Body>
                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="476,464" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                      <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="476,317" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -344,19 +324,7 @@
                                             <InArgument x:TypeArguments="x:String">[(idLinha + 2).ToString]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'push button'" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-                                          <ui:UiElementExists.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4326b0f-6368-4756-9d22-9fa21d2df5a1" InformativeScreenshot="0fac21e27700b773650ee877de93d50a" Selector="[string.Format(&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='eCAC - Centro Virtual de Atendimento - Google Chrome' /&gt;&lt;ctrl name='eCAC - Centro Virtual de Atendimento' role='document' /&gt;&lt;ctrl name='eCAC' role='application' /&gt;&lt;ctrl name='Comprovante de Arrecadação' role='document' /&gt;&lt;ctrl role='row' idx='3' /&gt;&lt;ctrl name=' ' role='cell' /&gt;&lt;ctrl role='table' /&gt;&lt;ctrl role='row' idx='{0}' /&gt;&lt;ctrl idx='2' role='cell' /&gt;&quot;, linhaDaTabela)]">
-                                              <ui:Target.TimeoutMS>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
-                                            </ui:Target>
-                                          </ui:UiElementExists.Target>
-                                        </ui:UiElementExists>
-                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button'" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button'" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -368,13 +336,10 @@
                                             </ui:CursorPosition>
                                           </ui:Click.CursorPosition>
                                           <ui:Click.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a27c7225-80d6-434f-8565-7a8b88766de2" InformativeScreenshot="0fac21e27700b773650ee877de93d50a" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='eCAC - Centro Virtual de Atendimento - Google Chrome' /&gt;&lt;ctrl name='eCAC - Centro Virtual de Atendimento' role='document' /&gt;&lt;ctrl name='eCAC' role='application' /&gt;&lt;ctrl name='Comprovante de Arrecadação' role='document' /&gt;&lt;ctrl idx='3' role='row' /&gt;&lt;ctrl name=' ' role='cell' /&gt;&lt;ctrl idx='2' role='row' /&gt;&lt;ctrl role='push button' /&gt;">
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a27c7225-80d6-434f-8565-7a8b88766de2" InformativeScreenshot="0fac21e27700b773650ee877de93d50a" Selector="[string.Format(&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='eCAC - Centro Virtual de Atendimento - Google Chrome' /&gt;&lt;ctrl name='eCAC - Centro Virtual de Atendimento' role='document' /&gt;&lt;ctrl name='eCAC' role='application' /&gt;&lt;ctrl name='Comprovante de Arrecadação' role='document' /&gt;&lt;ctrl idx='3' role='row' /&gt;&lt;ctrl name=' ' role='cell' /&gt;&lt;ctrl idx='{0}' role='row' /&gt;&lt;ctrl role='push button' /&gt;&quot;, linhaDaTabela)]" WaitForReady="COMPLETE">
                                               <ui:Target.TimeoutMS>
                                                 <InArgument x:TypeArguments="x:Int32" />
                                               </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
                                             </ui:Target>
                                           </ui:Click.Target>
                                         </ui:Click>
@@ -402,7 +367,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="358,85" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Abra o navegador GoogleChrome e faça o login no ECAC;&quot; + Chr(13) +&#xD;&#xA;&quot;Entre com alteração para o CNPJ desejado, caso esteja&quot; + Chr(13) +&#xD;&#xA;&quot;como procurador, depois vá para:&quot; + Chr(13) + Chr(13) +&#xD;&#xA;&quot;  Pagamentos e Parcelamentos &gt;&quot; + Chr(13) +&#xD;&#xA;&quot;     Consulta Comprovante de Pagamento - DARF, DAS, DAE e DJE&quot;]" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="358,85" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Abra o navegador GoogleChrome e faça o login no ECAC;&quot; + Chr(13) +&#xA;&quot;Entre com alteração para o CNPJ desejado, caso esteja&quot; + Chr(13) +&#xA;&quot;como procurador, depois vá para:&quot; + Chr(13) + Chr(13) +&#xA;&quot;  Pagamentos e Parcelamentos &gt;&quot; + Chr(13) +&#xA;&quot;     Consulta Comprovante de Pagamento - DARF, DAS, DAE e DJE&quot;]" />
         </Sequence>
       </If.Else>
     </If>
