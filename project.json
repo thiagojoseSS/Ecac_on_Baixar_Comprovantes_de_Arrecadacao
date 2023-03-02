@@ -3,12 +3,12 @@
   "description": "Com a Tela já aberta pelo usuário, no caminho \"Pagamentos e Parcelamentos\" \r\n          -> \"Pagamento\" \r\n                    -> \"Consulta Comprovante de Pagamento - DARF, DAS, DAE e DJE\"\r\nE com a \"Data de arrecadação\" do mês preenchida.",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.17.0-preview]",
+    "UiPath.Excel.Activities": "[2.18.0-preview]",
     "UiPath.Mail.Activities": "[1.18.2]",
-    "UiPath.PDF.Activities": "[3.12.0-preview]",
-    "UiPath.System.Activities": "[22.10.4]",
-    "UiPath.Testing.Activities": "[22.12.0-preview]",
-    "UiPath.UIAutomation.Activities": "[22.10.4]"
+    "UiPath.PDF.Activities": "[3.13.0-preview]",
+    "UiPath.System.Activities": "[23.2.0-preview]",
+    "UiPath.Testing.Activities": "[23.2.0-preview]",
+    "UiPath.UIAutomation.Activities": "[23.2.0-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -22,6 +22,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
